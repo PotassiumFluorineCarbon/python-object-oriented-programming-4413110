@@ -1,5 +1,5 @@
 # Python Object Oriented Programming by Joe Marini course example
-# Programming challenge: define a class to represent a stock symbol
+# Programming challenge: define a class to represent a stock ticker
 
 # Challenge: create a class to represent stock information.
 # Your class should have properties for:
@@ -10,7 +10,14 @@
 # of "Ticker: Company -- $Price"
 
 class Stock:
-    pass
+    def __init__(self, ticker, price, name) -> None:
+        self.ticker = ticker
+        self.price = price
+        self.name = name
+    def get_description(self):
+        if self.ticker == None:
+            self.__Stocklist = []
+        return f"{self.ticker}: {self.name} -- ${self.price}"
 
 # ~~~~~~~~~ TEST CODE ~~~~~~~~~
 msft = Stock("MSFT", 342.0, "Microsoft Corp")
